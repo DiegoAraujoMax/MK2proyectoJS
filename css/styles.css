@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+textarea,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.img-carrito {
+    width: 3rem;
+    height: auto;
+}
+
+
+.img-producto {
+    width: 75px;
+    height: auto;
+}
+
+
+/*footer*/
+.icon {
+    color: black;
+
+}
+
+.icon:hover {
+    color: grey;
+}
+
+.grupo-c {
+    height: 25rem;
+}
