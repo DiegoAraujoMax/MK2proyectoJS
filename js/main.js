@@ -3,19 +3,18 @@ let articulosCarrito = [];
 const listaProducto = document.querySelector("#listaProducto");
 const contenedorCarrito = document.querySelector("#listaCarrito tbody");
 const limpiarCarrito = document.querySelector("#limpiar-carrito");
-const carrito = document.querySelector("#carrito")
+const carrito = document.querySelector("#carrito");
+const pagar = document.querySelector("#ir-a-pagar");
 
 function añadirProducto(evt) {
   evt.preventDefault();
   if (evt.target.classList.contains("agregarCarrito")) {
-    //console.log(evt.target.parentElement.parentElement)
     const producto = evt.target.parentElement.parentElement;
-    //console.log(producto)
     datosDelProducto(producto);
   }
 }
+
 function datosDelProducto(item) {
-  //console.log(item)
   const contenidoProducto = {
     imagen: item.querySelector("img").src,
     titulo: item.querySelector("h5").textContent,
@@ -36,16 +35,13 @@ function datosDelProducto(item) {
     });
     articulosCarrito = [...productos];
   } else {
-    //articulosCarrito.push(contenidoProducto)
     articulosCarrito = [...articulosCarrito, contenidoProducto];
   }
-  //console.log(contenidoProducto);
   diseñarCarritoHTML();
-  //console.log(articulosCarrito);
 }
 
 function diseñarCarritoHTML() {
-    limpiarCarritoHTML()
+  limpiarCarritoHTML();
   articulosCarrito.forEach((producto) => {
     const linea = document.createElement("tr");
     linea.innerHTML = `
@@ -59,40 +55,52 @@ function diseñarCarritoHTML() {
   });
   usarStorage();
 }
-function limpiarCarritoHTML(){
-    while(contenedorCarrito.firstChild){
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
-    }
+
+function limpiarCarritoHTML() {
+  while (contenedorCarrito.firstChild) {
+    contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+  }
 }
 
-function limpiarCarritoStorage(){
-    while(contenedorCarrito.firstChild){
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
-    }
-    articulosCarrito = [];
-    usarStorage();
+function limpiarCarritoStorage() {
+  while (contenedorCarrito.firstChild) {
+    contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+  }
+  articulosCarrito = [];
+  usarStorage();
 }
 
-function usarStorage(){
-    localStorage.setItem('carrito', JSON.stringify(articulosCarrito))
+function usarStorage() {
+  localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
 }
 
-function eliminarProducto(evt){
-    evt.preventDefault();
-    //console.log(evt.target.classList.contains('borrar-producto'))
-    if(evt.target.classList.contains('borrar-producto')){
-        const producto = evt.target.parentElement.parentElement
-        const productId = producto.querySelector('button').getAttribute('id')
-        articulosCarrito = articulosCarrito.filter( prod => prod.id !== productId)
-        diseñarCarritoHTML();
-    }
+function eliminarProducto(evt) {
+  evt.preventDefault();
+  if (evt.target.classList.contains("borrar-producto")) {
+    const producto = evt.target.parentElement.parentElement;
+    const productId = producto.querySelector("button").getAttribute("id");
+    articulosCarrito = articulosCarrito.filter((prod) => prod.id !== productId);
+    diseñarCarritoHTML();
+  }
+}
+
+function irAPagar(event) {
+  event.preventDefault(); 
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Algo salió mal, intenta nuevamente mas tarde!",
+    footer: '<a href="#">Vuelve a la bodega</a>'
+  });
+  limpiarCarritoStorage();
 }
 
 listaProducto.addEventListener("click", añadirProducto);
-limpiarCarrito.addEventListener("click",limpiarCarritoStorage);
-carrito.addEventListener('click', eliminarProducto)
-window.addEventListener('DOMContentLoaded', ()=>{
-    articulosCarrito=JSON.parse(localStorage.getItem('carrito')) || [];
+limpiarCarrito.addEventListener("click", limpiarCarritoStorage);
+carrito.addEventListener("click", eliminarProducto);
+pagar.addEventListener("click", irAPagar);
+window.addEventListener("DOMContentLoaded", () => {
+  articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    diseñarCarritoHTML();
-})
+  diseñarCarritoHTML();
+});

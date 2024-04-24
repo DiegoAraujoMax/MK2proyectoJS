@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./tonel.png" type="image/x-icon" alt="Favicon, tonel, logo principal">
     <script src="https://kit.fontawesome.com/991d438261.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -36,7 +37,7 @@
     </main>
 -->
     <main>
-        <div id="listaProducto" class="container">
+        <div id="listaProducto" class="container ">
             <h1 class="text-center mb-2"><u>Productos</u></h1>
             <div class="row row-cols-3">
                 <div class="col card" style="width: 18rem;"><img src="./assets/img/TintoCabernetSauvignon.webp"
@@ -95,7 +96,9 @@
                 </div>
             </div>
         </div>
-        <div><h1 class="text-center mb-2"><u>Carrito</u></h1></div>
+        <div>
+            <h1 class="text-center mb-2"><u>Carrito</u></h1>
+        </div>
         <div id="carrito">
             <table id="listaCarrito" class="table table-dark table-striped">
                 <thead>
@@ -108,11 +111,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                  
                 </tbody>
-                <a class="btn btn-outline-danger" href="#" role="button" id="limpiar-carrito" >Limpiar carrito</a>
+                <a class="btn btn-outline-danger mb-2" href="#" role="button" id="limpiar-carrito">Limpiar carrito</a>
+                <a href="#" class="btn btn-outline-success mb-2 float-end ir-a-pagar" role="button" data-bs-toggle="button" id="ir-a-pagar">Ir a pagar</a>
             </table>
-           
+
         </div>
     </main>
 
