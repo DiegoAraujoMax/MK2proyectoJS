@@ -84,6 +84,7 @@ function eliminarProducto(evt) {
   }
 }
 
+
 function irAPagar(event) {
   event.preventDefault(); 
   Swal.fire({
@@ -93,6 +94,21 @@ function irAPagar(event) {
     footer: '<a href="#">Vuelve a la bodega</a>'
   });
   limpiarCarritoStorage();
+}
+
+
+const footerLinks = document.querySelectorAll("footer a");
+footerLinks.forEach(link => {
+  link.addEventListener("click", mostrarSweetAlert);
+});
+
+function mostrarSweetAlert(event) {
+  event.preventDefault(); 
+  Swal.fire({
+    title: "😦",
+    text: "Lo sentimos, aún estamos creando nuestras redes",
+    icon: "info"
+  });
 }
 
 listaProducto.addEventListener("click", añadirProducto);
