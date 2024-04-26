@@ -1,0 +1,41 @@
+{
+    "productos": [
+      {
+        "nombre": "Tinto Cabernet Sauvignon",
+        "imagen": "./assets/img/TintoCabernetSauvignon.webp",
+        "precio": 269,
+        "id": "p1"
+      },
+      {
+        "nombre": "Tinto Cabernet Sauvignon Roble",
+        "imagen": "./assets/img/TintoCabernetSauvignonRoble.webp",
+        "precio": 469,
+        "id": "p2"
+      },
+      {
+        "nombre": "Vino Rosado Merlot",
+        "imagen": "./assets/img/VinoRosadoMerlot.webp",
+        "precio": 249,
+        "id": "p3"
+      },
+      {
+        "nombre": "Vino Sauvignon Blanco",
+        "imagen": "./assets/img/VinoSauvignonBlanco.webp",
+        "precio": 369,
+        "id": "p4"
+      },
+      {
+        "nombre": "Vino Tinto Malbec",
+        "imagen": "./assets/img/VinoTintoMalbec.webp",
+        "precio": 169,
+        "id": "p5"
+      },
+      {
+        "nombre": "Vino Tinto Tannat",
+        "imagen": "./assets/img/VinoTintoTannat.webp",
+        "precio": 169,
+        "id": "p6"
+      }
+    ]
+  }
+  

@@ -25,70 +25,17 @@
                     <img src="./tonel.png" alt="logo" width="30" height="24" class="d-inline-block align-text-top">
                     Bodegas Araujo
                 </a>
-                <a href="./carrito.html"><img src="./assets/img/carrito-de-compras.png" class="img-carrito"
-                        alt="carritoDeCompras"></a>
             </div>
         </nav>
     </header>
 
     <main>
-        <div id="listaProducto" class="container ">
+        <div>
             <h1 class="text-center mb-2"><u>Productos</u></h1>
-            <div class="row row-cols-3">
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/TintoCabernetSauvignon.webp"
-                        class="card-img-top" alt="TintoCabernetSauvignon">
-                    <div class="card-body">
-                        <h5 class="card-title">Tinto Cabernet Sauvignon</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p1">Añadir</a>
-                    </div>
-                </div>
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/TintoCabernetSauvignonRoble.webp"
-                        class="card-img-top" alt="TintoCabernetSauvignonRoble">
-                    <div class="card-body">
-                        <h5 class="card-title">Tinto Cabernet Sauvignon Roble</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p2">Añadir</a>
-                    </div>
-                </div>
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/VinoRosadoMerlot.webp"
-                        class="card-img-top" alt="VinoRosadoMerlot">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Rosado Merlot</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p3">Añadir</a>
-                    </div>
-                </div>
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/VinoSauvignonBlanco.webp"
-                        class="card-img-top" alt="VinoSauvignonBlanco">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Sauvignon Blanco</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p4">Añadir</a>
-                    </div>
-                </div>
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/VinoTintoMalbec.webp"
-                        class="card-img-top" alt="VinoTintoMalbec">
-                    <div class="card-body">
-                        <h5 class="card-title">Vino Tinto Malbec</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p5">Añadir</a>
-                    </div>
-                </div>
-                <div class="col card" style="width: 18rem;"><img src="./assets/img/VinoTintoTannat.webp"
-                        class="card-img-top" alt="VinoTintoTannat">
-                    <div class="card-body">
-                        <h5 class="card-title">VinoTintoTannat</h5>
-                        <small class="card-text">Precio:</small>
-                        <p class="card-text text-muted mb-1">$249</p>
-                        <a href="#" class="btn btn-dark agregarCarrito" id="p6">Añadir</a>
-                    </div>
-                </div>
+        </div>
+        <div id="listaProducto" class="container w-75 p-3 ">
+            <div id="listadoProducto" class="row row-cols-3">
+
             </div>
         </div>
         <div>
@@ -107,11 +54,16 @@
                 </thead>
                 <tbody>
                 </tbody>
-                <a class="btn btn-outline-danger mb-2" href="#" role="button" id="limpiar-carrito">Limpiar carrito</a>
-                <a href="#" class="btn btn-outline-success mb-2 float-end ir-a-pagar" role="button" data-bs-toggle="button" id="ir-a-pagar">Ir a pagar</a>
             </table>
-
+            <div class="row justify-content-center bg-dark p-2 m-2">
+                <a class="btn btn-outline-danger mb-2 w-25 p-3" href="#" role="button" id="limpiar-carrito">Limpiar carrito</a>
+                <h3 class="mb-2 btn btn-dark w-25 p-3">Total a pagar: $<span class=" mx-2 badge bg-secondary" id="totalPagar">0.00</span></h3>
+                
+                <a href="#" class="btn btn-outline-success mb-2  w-25 p-3 ir-a-pagar" role="button"
+                    data-bs-toggle="button" id="ir-a-pagar">Ir a pagar</a>    
+            </div>
         </div>
+        
     </main>
 
     <footer class="text-center  container-fluid my-3 bg-light">
